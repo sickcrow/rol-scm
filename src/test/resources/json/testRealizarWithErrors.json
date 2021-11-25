@@ -1,0 +1,11 @@
+{
+	"codigoMetodoPago": "TARJETA",
+	"codigoMedioPago": "VISA",
+	"monto": 20.5,
+	"nombreItem": "Clasificados Clarín – Receptoría On line",
+	"idTransaccionCliente": "ROL-0000000003",
+	"cantidadCuotas": 1,
+	"mail": "usuario@gmail.com",
+	"apellidos": "Apellido Prueba",
+	"nombres": "Nombre Prueba"
+}

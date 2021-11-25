@@ -1,0 +1,52 @@
+/* Real Person jQuery plugin styles v1.1.1. */
+.realperson-challenge {
+	 background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #000000;
+    display: block;
+    margin-left: 170px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    width: 245px;
+    position: relative;
+    float: left;
+}
+.realperson-text {
+	font-family: "Courier New",monospace;
+	font-size: 7px;
+	font-weight: bold;
+	letter-spacing: -2px;
+	line-height: 2px;
+	color: #08c;
+	overflow: hidden;
+	width: 220px;
+	float: left;
+	position: relative;
+	cursor: pointer;
+	padding-top: 2px;	
+}
+.realperson-regen {
+	padding-top: 4px;
+	font-size: 12px;
+	text-align: right;
+	cursor: pointer;
+	background: url(../img/glyphicons-halflings.png) -239px -21px no-repeat transparent;
+	display: block; 
+	width: 16px;
+	height: 16px;
+	float: right;
+	text-indent: -9999px;
+	margin: -3px 0 3px 0;
+}
+.realperson-disabled {
+	opacity: 0.5;
+	filter: Alpha(Opacity=50);
+}
+.realperson-disabled .realperson-regen {
+	cursor: default;
+}

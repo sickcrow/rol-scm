@@ -1,0 +1,100 @@
+/* CSS PARA IMPRIMIR AVISOS */
+
+@media print {
+  * {
+    -webkit-transition: none !important;
+    transition: none !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+@page {size: A4; margin: 1cm;}
+
+/*html {font-size: 8pt;}
+body {zoom: 100% !important; max-height:29.7cm;}
+*/
+ html, body {
+    /*changing width to 100% causes huge overflow and wrap*/
+    height:100%;
+    overflow: hidden;
+    background: #FFF;
+    font-size: 6.5pt;
+  }
+
+#header {display: block !important; height: 48px;}
+#logo {display: none !important};
+#logo-print {display: block !important;}
+
+section.misAvisosSection {display: none !important;}
+.footerContentWrapper {display: none !important;}
+.filtroFullWrapper {display: none !important;}
+.alert {display: none !important;}
+
+#mensajeCompatibilidadBrowser {display: none !important;}
+#nuevoAvisoBtn {display: none !important;}
+#misAvisosSection h2 {display: none !important;}
+.menuRol {display: none !important;}
+#titVentana {display: none !important;}
+#titMisAvisos {display: none;}
+.btn {display: none !important;}
+#bannerTop {display: none !important;}
+#bannerTop object {display: none !important;}
+.modal-backdrop {display: none !important;}
+#popUpPrint { background-color: #ccc;}
+#popUpPrint .modal-dialog{
+	border: 0 ;
+	display: block !important;
+	/*font-size: 6pt;*/
+	left: 0 !important;
+	margin: 0 !important;
+	overflow: none !important;
+}
+.modal-header {display: block !important;}
+#popUpPrint hr {border: 0px solid #444;}
+#user-cont-aviso {
+	border-top: 0px solid #333;
+	border-bottom: 0px solid #333;
+	margin-bottom: 0px;
+	padding: 5px 0;
+}
+
+#popUpPrint div.modal-body  {
+	clear: left;
+	display: block !important;
+	float: left;
+	position: relative;
+}
+#popUpPrint .pull-left .divPrecioFinal {display: block !important; }
+#popUpPrint .listaAvisosFechaYEstado {display: block; position: absolute;}
+#popUpPrint.modal .modal-body ul {
+	float: none;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5mm 0 0;
+}
+#popUpPrint .divPrecioFinal {
+	border-top: 0px solid #333 !important;
+	display: block;
+	padding: 5mm 0 0 0 !important;
+	width: 100% !important;
+}
+
+#popUpPrint .subTitAviso {margin: 0 0 2mm 0 !important; border-bottom: 1pt solid #000;}
+#popUpPrint .divPrecioFinal div, #popUpPrint .divPrecioFinal div p {font-size: 14pt;}
+#popUpPrint .divPrecioFinal div .ivaIncluido {font-size: 10pt;}
+#popUpPrint div.modal-body h3 {color: #0088cc; display: block !important;}
+#popUpPrint div.modal-body p {display: block !important;}
+#popUpPrint div.modal-body div img {display: block !important; margin: 0 auto;}
+#popUpPrint div.modal-footer {border: 0;}
+#popUpPrint div.modal-footer h3 {color: #0088cc; display: block !important;}
+#popUpPrint div.modal-footer p {display: block !important;}
+#popUpPrint div.modal-footer div img {display: block !important;}
+#popUpPrint .imagenAviso {
+	border: 1pt solid #000;
+	margin: .5cm 0 0 0 !important;
+	padding: 1pt 1pt 2pt 1pt;
+	position: relative;
+	text-align: left;
+}
+
+
+}

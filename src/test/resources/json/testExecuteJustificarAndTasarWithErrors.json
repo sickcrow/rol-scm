@@ -1,0 +1,57 @@
+{
+    "tipoIVA": {
+        "codigo": "CONSUMIDOR_FINAL"
+    },
+    "conceptosVendibles": [{
+        "itemsConceptoVendible": [{
+            "itemsAviso": [{
+                "aviso": {
+                    "tipo": "LINEAL",
+                    "fechaPedidoPublicacion": 1373425200000,
+                    "textoLibreTemplate": "Un aviso ROL",
+                    "tipoOperacion": {
+                        "codigo": "VENTA"
+                    },
+                    "productoComercial": {
+                        "tipo": "PAPEL",
+                        "codigo": "R15 VENTA - LINEAL NO EXISTENTE",
+                        "producto": {
+                            "tipo": "PAPEL",
+                            "codigo": "CLASIFICADOS CLARIN"
+                        }
+                    },
+                    "templateDetallado": {
+                        "codigo": "131-Lineal auto simple"
+                    },
+                    "nivelEstructura": {
+                        "tipo": "PAPEL",
+                        "codigo": "CLASIFICADOS_CLARIN.AUTOMOTORES.RUBRO_15.AUTOS_NACIONALES_E_IMPORTADOS"
+                    },
+                    "zonasComercializacion": [{
+                        "codigo": "CLASIFICADOS_CLARIN.PRODUCTO.CAPITAL_FEDERAL_+_GBA"
+                    }],
+                    "ordenamientos": [{
+                        "codigo": "MARCA",
+                        "valor": "FORD",
+                        "codigoBusqueda": "FORD"
+                    },
+                    {
+                        "codigo": "MODELO",
+                        "valor": "Fiesta",
+                        "codigoBusqueda": "Fiesta.FORD"
+                    },
+                    {
+                        "codigo": "AÑO",
+                        "valor": "00",
+                        "codigoBusqueda": "00"
+                    }]
+                }
+            }]
+        }]
+    }],
+    "capturador": {
+        "tipo": "ANUNCIANTE",
+        "codigoCliente": "ROL",
+        "codigoAnunciante": 300
+    }
+}

@@ -1,0 +1,141 @@
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  	<display-name>Receptoria Online</display-name>
+  
+  	<!-- Configure Spring MVC Servlet. -->
+  	<servlet>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mvc-dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>*.gif</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>*.jpg</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>*.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>*.css</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>*.htc</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	    <servlet-name>default</servlet-name>
+	    <url-pattern>*.swf</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+
+	<!-- Configure Web Application Context (services, daos...) -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+		    classpath:application-context.xml,
+			classpath:properties-context.xml
+		</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+  
+  	<!-- Sitemesh configuration -->
+  
+	<filter>
+	    <filter-name>sitemesh</filter-name>
+	    <filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>sitemesh</filter-name>
+	    <url-pattern>/*</url-pattern>
+	    <dispatcher>REQUEST</dispatcher>
+    	<dispatcher>FORWARD</dispatcher>
+    	<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+	
+	<!-- URLRewriteFilter configuration -->
+	
+	<filter>
+	    <filter-name>UrlRewriteFilter</filter-name>
+	    <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>UrlRewriteFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	    <dispatcher>REQUEST</dispatcher>
+	    <dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+	<session-config>
+	    <session-timeout>20</session-timeout>
+	</session-config>
+
+	<filter>
+	    <filter-name>SessionFilter</filter-name>
+	    <filter-class>ar.com.agea.hub.rol.utils.SessionFilter</filter-class>
+	    <init-param>
+	        <param-name>starting-urls</param-name>
+	        <param-value>/crearaviso, /misavisos, /datospersonales</param-value>
+	    </init-param>
+	    <init-param>
+	        <param-name>ending-urls</param-name>
+	        <param-value>getTiposOperacion, getBienes, getFamilias, getServerTime, getAgrupadoresProductoZonasNiveles, getConfiguracionesPromocionPantalla,
+				getCalendario, getItemsOrdenamientoAviso, getProductoComercialDefault, justificar, validatePalabrasProhibidas, getTemplatesDetallado,
+				getCaracteresInvalidos, getImagenes, getTarjetasPago, getPaises, getProvincias, getLocalidades, pagarYGuardarOrdenDePublicacion,
+				getLimiteCotizacionExedido, updateCapturador, eliminarPromo365, checkIntentosPromocion365, validatePromocion365, setModel,
+				removeModel, getModel, getTemplatePrecarga, getUUID, executePagarAndActualizar, getOrdenesPublicacionByCapturador, logout,
+				getConfiguracionesOrdenamientoPantalla, updateUsuario, getSessionStatus, getItemsOrdenamientoAvisoGroup, suspenderPublicacionAviso,
+				reanudarPublicacionAviso, validatePromociones, guardarOrdenDePublicacion, tasar, getTrackCampana, republicarAviso, editarOrdenDePublicacion,
+				getPermisoAtributo, updateUsuarioPASE
+			</param-value>
+	    </init-param>
+	    <init-param>
+	        <param-name>process-cookies</param-name>
+	        <param-value>cookie, usuario, capturador</param-value>
+	    </init-param>
+	</filter>
+	<filter-mapping>
+	    <filter-name>SessionFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<distributable/>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/pages/404.html</location>
+	</error-page>
+</web-app>

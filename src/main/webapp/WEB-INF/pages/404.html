@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var rootUrl = location.protocol;
+rootUrl = rootUrl+"//"+location.host
+var path = location.pathname;
+var tempStr = path.split('/');
+rootUrl = rootUrl+"/"+tempStr[1];
+document.write('<script src="'+rootUrl+'/js/url.utils.js"><\/script>');
+</script>
+<script type="text/javascript">
+window.location = URLConstants.ROL_ERROR; 
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+</body>
+</html>

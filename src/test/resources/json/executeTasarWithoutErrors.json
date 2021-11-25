@@ -1,0 +1,39 @@
+{
+    "tipoIVA": {
+        "codigo": "CONSUMIDOR_FINAL"
+    },
+    "conceptosVendibles": [{
+        "itemsConceptoVendible": [{
+            "itemsAviso": [{
+                "aviso": {
+                    "tipo": "LINEAL",
+                    "fechaPedidoPublicacion": 1373425200000,
+                    "tipoOperacion": {
+                        "codigo": "VENTA"
+                    },
+                    "productoComercial": {
+                        "tipo": "PAPEL",
+                        "codigo": "R15 VENTA - LINEAL",
+                        "producto": {
+                            "tipo": "PAPEL",
+                            "codigo": "CLASIFICADOS CLARIN"
+                        }
+                    },
+                    "nivelEstructura": {
+                        "tipo": "PAPEL",
+                        "codigo": "CLASIFICADOS_CLARIN.AUTOMOTORES.RUBRO_15.AUTOS_NACIONALES_E_IMPORTADOS"
+                    },
+                    "zonasComercializacion": [{
+                        "codigo": "CLASIFICADOS_CLARIN.PRODUCTO.CAPITAL_FEDERAL_+_GBA"
+                    }],
+                    "lineasFacturadas": 4
+                }
+            }]
+        }]
+    }],
+    "capturador": {
+        "tipo": "ANUNCIANTE",
+        "codigoCliente": "ROL",
+        "codigoAnunciante": 300
+    }
+}

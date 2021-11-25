@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ROL - Dispositivo no compatible</title>
+        <style type="text/css">
+        *{margin:0; padding:0;}
+        body {background: #f8f8f8; font-family:"Arial",serif; font-size:1rem;}
+        header {background: #fff; border-bottom: 1px solid #98A3A8; display: block; float: left; height: 63px; padding-top: 15px; position: relative; width: 100%;}
+        article {width: 80%; margin: auto;}
+        header h1 {background: url(../img/sprite_clasificados.png) -4px -3px transparent; display: block; height: 50px; width: 180px;}
+        header h1 a {display: block; height: 50px; width: 180px; text-indent: -9999999px }
+        section {background: #fff; display: block; float: left; padding: 15px 0; position: relative; width: 100%;}
+        section h1 {font-size: 2rem; padding: 0 0 20px 0}
+        section .tit {text-transform: capitalize;}
+        section .disp {border: 2px solid #ffd200; background: #fff3bc; display: block; float: left;  margin: 20px 0 0 0; padding: 5px;}
+        .left {float: left; display: block; width: 50%;}
+        .right {float: right; display: block; width: 50%;}
+        .right p {text-align: right;}
+        footer {
+            background-image: linear-gradient(top, rgb(74,75,75) 16%, rgb(100,101,103) 58%);
+            background-image: -o-linear-gradient(top, rgb(74,75,75) 16%, rgb(100,101,103) 58%);
+            background-image: -moz-linear-gradient(top, rgb(74,75,75) 16%, rgb(100,101,103) 58%);
+            background-image: -webkit-linear-gradient(top, rgb(74,75,75) 16%, rgb(100,101,103) 58%);
+            background-image: -ms-linear-gradient(top, rgb(74,75,75) 16%, rgb(100,101,103) 58%);
+            background-image: -webkit-gradient( linear, left top,left bottom,color-stop(0.16, rgb(74,75,75)),color-stop(0.58, rgb(100,101,103)));       
+            bottom: 0; display: block; float: left; height: 40px; padding-top: 12px; position: absolute; width: 100%;}
+        footer p {color: #CECECD}
+        footer p a {color: #fff}
+        </style>
+    </head>
+    <body>
+        <header>
+            <article>
+                <h1><a href="#" title="Clasificados Clarín">Clasificados Clarín</a></h1>
+            </article>
+        </header>
+        <section>
+            <article>
+                <h1>Dispositivo no compatible</h1>
+                <p>Lo sentimos, tu dispositivo no es compatible con nuestra aplicación.</p>
+                <p>Deberás acceder desde una computadora de escritorio para publicar avisos.</p>
+                <p class="disp">Estás usando: </p>
+            </article>
+        </section>
+        <footer>
+            <article>
+                <div class="left">
+                    <p>Atención a clientes: <a href="mailto:soporte.rol@clarin.com" title="soporte.rol@clarin.com">soporte.rol@clarin.com</a></p>
+                </div>
+                <div class="right">
+                    <p><a href="#" title="Términos y condiciones de uso">Términos y condiciones de uso</a></p>
+                </div>
+            </article>
+        </footer>
+        <script src="../js/jquery.js"></script> 
+        <script src="../js/modernizr.js"></script>
+        <script src="../js/detectizr.js"></script>
+        <script>
+            Modernizr.Detectizr.detect({detectScreen:false});
+            $(document).ready(function(){
+                var sOperativo = Modernizr.Detectizr.device.os;
+                var navegador = Modernizr.Detectizr.device.browser;
+                if(navegador === "ie"){
+                    navegador = "Internet Explorer";
+                }
+                var dispositivo = Modernizr.Detectizr.device.type;
+                $(".disp").append("<span class='tit'>"+sOperativo+"</span>&nbsp;con el navegador <span class='tit'>"+navegador+"</span> desde un "+dispositivo);
+            });                  
+        </script>
+    </body>
+</html>

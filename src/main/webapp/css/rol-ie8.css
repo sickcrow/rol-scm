@@ -1,0 +1,396 @@
+/* Estilos para IE8 */
+
+/* Botones  */
+
+.genericBtn {
+	cursor: pointer; 
+	border: 0px solid red;
+	filter: none;
+	background-color: none;
+	background-image: url(../img/bg_btn.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;  
+	height: 46px !important; 
+	width: 144px; 
+}
+.genericBtn span { 
+	position: relative; 
+	margin-top: expression(this.offsetHeight < this.parentNode.offsetHeight ? parseInt((this.parentNode.offsetHeight - this.offsetHeight) / 2) + "px" : "0");
+}
+
+.disabledBtn{
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.55;
+	filter: alpha(opacity=55);
+	-webkit-box-shadow: none;
+	box-shadow: none;	
+	color: #B9B8B8!important;
+	outline: 0 !important;
+	text-decoration: none !important;
+}
+
+
+
+#contentWrapper .container section#paso1-QueQueres div.genericBtn {width: 146px}
+
+#paso1-Cat .genericBtn span, #paso4-Cat .genericBtn span {background: url(../img/cerrar.png) 130px 6px no-repeat transparent; display: block}
+#paso1-Cat .CatBox {
+	border: 0 !important; 
+	background: url(../img/bg_cat.jpg) 0 0 no-repeat transparent; 
+	width: 144px !important; 
+	height: 42px !important; 
+	margin-left: 25px !important
+}
+#paso4-Cat .CatBox {margin-left: 15px !important}
+#paso1-SelecCat .CatBox {margin-top: 2px !important; }
+
+section#paso1-QueQueres #categoria-FAMILIA_CONTACTOS.btnInicioEnamorados , #categoriaSeleccionada.btnEnamorados { 
+	background: url(../img/btn_enamorados-2015.jpg) 0 0 no-repeat transparent;
+	border: 0;
+}
+
+
+/* Checkbox */
+
+.custom-checkbox input, .custom-radio input {
+	position: absolute;
+	left: 2px;
+	top: 7px !important;
+	margin: 0;
+	z-index: 0;
+}
+.custom-checkbox label {background-position: 0 -2px;}
+.custom-checkbox label.hover, .custom-checkbox label.focus {background-position: 0 -29px;}
+.custom-checkbox label.checked {background-position: 0 -83px;}
+.custom-checkbox label.checkedHover,.custom-checkbox label.checkedFocus {background-position: 0 -56px;}
+.custom-radio label {background-position: -7px 1px;}
+.custom-radio label.hover,.custom-radio label.focus {background-position: -7px 1px;}
+.custom-radio label.checked {background-position: -7px -82px;}
+
+
+.custom-checkbox #checkTerminosCondiciones {top: 5px !important;}
+
+
+#popUpPagar #liTarjetas li .custom-radio input {left: -5px !important; top: 6px !important;}
+#popUpPagar #liTarjetas li .custom-radio label {line-height: 18px !important}
+#popUpPagar #btnPagarPopUp {padding: 0;}
+#popUpPagar #btnPagarPopUp span {padding: 5px 0 0 0;}
+#popUpPagar #btnPagarPopUp a {padding: 0 0 0;}
+
+/* Ventana modal */ 
+.fuelux .fade.modal {top: -50%;}
+
+/* Mensajes */
+.popover button.close {
+	float: right; 
+	width: 20px;
+	display: block;
+	clear: both;
+}
+.popover {line-height: 150%}
+.popover p {
+	float: left; 
+	clear: left;
+	margin: 30px 0;
+	display: block; 
+	line-height: 150%;
+}
+.popover-inner {margin-top: 0px !important}
+.popover.bottom .arrow {
+	background: url(../img/arrow-top.png) 0 0 no-repeat !important;  
+	border-bottom: 0px solid !important; 
+	width: 22px !important; 
+	height: 11px !important; 
+	display: block !important; 
+	position: relative !important; 
+	z-index: 99 !important; 
+	left: 50% !important;
+}
+.popover.top .arrow {
+	background: url(../img/arrow-bottom.png) 0 0 no-repeat !important;  
+	border-top: 1px solid #f2f2ea !important; 
+	width: 10px !important; 
+	height: 11px !important; 
+	display: block !important; 
+	margin: 0px !important
+}
+.popover .arrow:after {background: none !important; border: none !important; } 
+.popover h3 {display: none;}
+
+
+/* Paso 1 - Mensajes */
+
+#paso1-QueQueres #paso1-SelecCat .popover {
+	background: url(../img/p_categorias.jpg) 0 0 no-repeat transparent !important; 
+	border: 0 !important; 
+	padding: 15px 10px 6px 8px !important; 
+	margin: 0 !important; 
+	margin-left: -10px !important; 
+	width: 622px !important; 
+	max-width: 622px !important
+}
+#paso1-SelecCat .popover .arrow {display: none !important}
+#wrapperAction {position: relative}
+#wrapperAction .popover {
+	top: -90px !important; 
+	left: 640px !important; 
+	background: url(../img/p_terminaste.jpg) 0 0 no-repeat transparent !important; 
+	border: 0 !important; 
+	padding: 12px 4px 10px 14px !important
+}
+#wrapperAction .popover .arrow {display: none !important}
+
+/* Paso 2 */
+
+#contentWrapper .container section#paso2-DondePublicara #paso2-Medio-rubro div.MedioRubroMainWrapper div.MedioRubroInnerWrapper {
+	background: url(../img/bg_rubros.jpg) 0 0 no-repeat transparent; 
+	filter: none; 
+	border: 0 !important; 
+	width: 255px; 
+	height: 110px; 
+}
+
+#paso2-DondePublicara .popover.top {top: -80px !important}
+
+#step2 div.popover.elegi {
+	background: url(../img/p_medios.jpg) 0 0 no-repeat transparent !important; 
+	border: 0 !important; 
+	padding: 12px 24px 31px 24px !important
+}
+
+#step2 div.popover.rubroPopover {
+	background: url(../img/p_rubros.jpg) 0 0 no-repeat transparent !important; 
+	border: 0 !important; 
+	padding: 12px 24px 31px 24px !important
+}
+
+#step2 div.popover.rubroPopover div.arrow{display: none !important;}
+#step2 div.popover.elegi div.arrow {display: none !important;}
+
+/* Paso 3 */
+
+#paso3-Calendar .popover {
+	background: url(../img/p_calendario.jpg) 0 0 no-repeat transparent !important; 
+	border: 0 !important; 
+	padding: 10px !important;
+	width: 260px !important;
+}
+
+#paso3-Calendar .popover .close {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+#paso3-Calendar .popover .arrow {display: none !important;}
+
+/* Paso 4 */
+
+#paso4-CrearAviso #txtAreaTextoLibre {height: 95px;} 
+.textoLibre .popover {
+	background: url(../img/p_textolibre.jpg) 0 0 no-repeat transparent !important; 
+	border: 0 !important; 
+	padding: 10px !important; 
+	margin-top: 0px !important
+}
+#paso4-CrearAviso .popover .arrow {display: none !important}
+
+section#paso4-Mejora-Posibilidades div.MedioRubroMainWrapper div.MedioRubroInnerWrapper {
+	background: url(../img/bg_sel_pictos2.jpg) 0 0 no-repeat;
+	border: none ;
+	filter: none ;
+	height: 58px;	
+}
+
+
+section#paso4-Mejora-Posibilidades  div.popover  {
+	background: url(../img/popoverDestaca.jpg) 0 0 no-repeat transparent !important; 
+	border: 0 !important; 
+	height: 82px;
+	padding: 10px !important;
+	width: 419px !important;
+}
+section#paso4-Mejora-Posibilidades  div.popover .popover-content {width: 365px !important;}
+section#paso4-Mejora-Posibilidades  div.popover .arrow {display: none !important;}
+
+
+/* Paso Mejora tu aviso */
+
+#popUpPictos {top: -50%;}
+#popUpPictos.in {top: 10%;}
+
+/* PASO 8 */
+
+#promociones #promo365 #btnInput365 {
+	background: url(../img/btn_365.jpg) 0 0 no-repeat transparent !important;
+	float: left;
+	height: 38px !important;
+	line-height: 20px;
+	margin-top: -2px !important;
+	margin-left: 10px;
+	width: 150px !important;
+}
+#promociones #promo365 #btnInput365 span {
+	display: block;
+	height: 28px !important;
+	line-height: 24px !important;
+	width: 150px !important;
+}
+
+#promociones #promo365 #textInput365 {
+	color: #ccc;
+}
+#promociones #promo365 #textInput365:focus {
+	color: #444;
+}
+/* Mis avisos */
+
+.reanudaBtn, .detenerBtn {
+	background: url(../img/bg_btn3.png) 0 0 no-repeat transparent;
+	text-align: center;
+	line-height: 57px;
+	height: 57px !important; 
+	width: 218px;
+	margin: 0;
+	padding: 0;
+}
+.reanudaBtn a, .detenerBtn a {
+	text-align: center;
+	line-height: 57px;
+	margin: 0;
+	padding: 0;
+	height: 57px; 
+	width: 218px;
+}
+
+.btnFooterMisAvisos .btnPagar a span {
+	display: block;
+	text-align: center;
+	line-height: 57px;
+	margin: 0;
+	padding: 0;
+	width: 140px;
+}
+
+/* Registracion */
+
+#contDatosPersonales .formItem .innerCenterFields #DatosPersonalesBtn,
+#register-LoginForm .formItem .innerCenterFields #IngresarBtn,
+#register-LoginForm .formItem .innerCenterFields #RegistrarBtn,
+#register-LoginForm .formItem .innerCenterFields #ingresaDniBtn, #recuerdaPassBtn {
+	background: url(../img/bg_btn2.png) 0 0 no-repeat transparent !important;
+	width: 172px !important;			 
+	height: 42px !important;
+	padding: 18px 0 0 0 !important;
+	font-size: 150%;
+	padding: 15px 45px;
+	position: relative;
+	right: 190px;			
+}
+
+#register-LoginForm .formItem .innerCenterFields #recuerdaPassBtn {
+	background: url(../img/bg_btn2.png) 0 0 no-repeat transparent !important;
+	width: 172px !important;			 
+	height: 59px !important;
+	padding: 10px 0 0 0 !important;
+	font-size: 150%;
+	padding: 15px 45px;
+	position: relative;
+	right: 190px;			
+}
+
+
+#register-LoginForm .formItem .innerCenterFields #ingresaDniBtn {
+	background: url(../img/bg_btn2.png) 0 0 no-repeat transparent !important;
+	width: 172px !important;			 
+	height: 59px !important;
+	padding: 20px 0 0 0 !important;
+	font-size: 150%;
+	padding: 15px 45px;
+	position: relative;
+	right: 116px;
+}
+
+#contDatosPersonales .formItem .innerCenterFields #DatosPersonalesBtn,
+#register-LoginForm .formItem .innerCenterFields #IngresarBtn,
+#register-LoginForm .formItem .innerCenterFields #RegistrarBtn,
+#register-LoginForm .formItem .innerCenterFields #ingresaDniBtn, #recuerdaPassBtn {
+	background-image: url(../img/bg_btn2-off.jpg) !important;
+}
+#crearCuentaBtn{
+	background: url(../img/bg_btn3.png) 0 0 no-repeat transparent !important;
+	width: 218px !important;			 
+	height: 57px !important;
+	padding: 20px 0 0 0 !important;
+}
+
+#register-LoginForm .formItem a.cancelarRegistrar {	left: 345px !important;}
+
+/* Barra Wizard */
+#MyWizard {width: 897px}
+.fuelux .wizard ul li#wizardPaso1 {width: 131px;}
+.fuelux .wizard ul li#wizardPaso2, .fuelux .wizard ul li#wizardPaso2.active, .fuelux .wizard ul li#wizardPaso2.complete  {left: -14px;}
+.fuelux .wizard ul li#wizardPaso3, .fuelux .wizard ul li#wizardPaso3.active, .fuelux .wizard ul li#wizardPaso3.complete {left: -28px; width: 138px}
+.fuelux .wizard ul li#wizardPaso4, .fuelux .wizard ul li#wizardPaso4.active {left: -48px; width: 133px}
+.fuelux .wizard ul li#wizardPaso4.complete {left: -48px; width: 133px}
+.fuelux .wizard ul li#wizardPaso7 {left: -59px;}
+.fuelux .wizard ul li#wizardPaso7.active, .fuelux .wizard ul li#wizardPaso7.complete {left: -62px;}
+/* Calendario */
+
+#paso3-Calendar .ui-datepicker-unselectable.ui-state-disabled {background: #f8f8f8 !important; filter: Alpha(Opacity=100) !important;}
+#paso3-Calendar .ui-datepicker-unselectable.ui-state-disabled span {
+	background: #D9D6D6 !important; 
+	filter: Alpha(Opacity=100) !important; 
+	color: #f8f8f8 !important;
+} 
+
+/* Mis Avisos */
+
+#popUpPrint.modal.fade.popUpInfo {top: -50%;}
+#popUpPrint.modal.fade.popUpInfo.in {top: 5%;}
+
+#divOrdenPublicacionSuccess, #divListaVaciaMensaje {
+	margin-left: 0px;
+	width:	792px;
+}
+
+#divListaVacia .genericBtn {
+	background: url(../img/sprite_clasificados.png) -4px -364px no-repeat transparent !important;
+	padding: 0 30px 0 38px !important;
+	width: 150px;
+}
+#divListaVacia .genericBtn span {
+	line-height: 42px;
+}
+
+#nuevoAvisoBtn {
+	background: url(../img/sprite_clasificados.png) -4px -54px no-repeat transparent !important;
+	border: 0;
+	filter: none !important;
+	padding: 10px 0 0 0;
+	width: 144px;
+	height: 34px !important;
+}
+
+#btnNuevoAvisoTerminos {
+	background: url(../img/sprite_clasificados.png) -4px -54px no-repeat transparent !important;
+	border: 0 !important;
+	filter: none !important;
+	padding: 10px 0 0 0 !important;
+	width: 144px !important;
+	height: 34px !important;
+}
+
+.footerAvisos .genericBtn.btnAvisos {
+	height: 34px !important;
+	width: 198px !important;	
+}
+.footerAvisos .genericBtn span {
+	border-right: 0px !important;
+	display: block;	
+	height: 36px !important;
+	left: -37px;
+	top: -18px;	
+}
+/* Footer */
+.footerContentWrapper {background: #4a4b4b; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a4b4b', endColorstr='#646567',GradientType=0 ); /* IE6-8 */}

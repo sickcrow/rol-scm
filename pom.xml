@@ -1,0 +1,325 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ar.com.agea.devops</groupId>
+	<artifactId>rol</artifactId>
+	<packaging>war</packaging>
+	<version>2.20.5-SNAPSHOT</version>
+	<name>Receptoria OnLine</name>
+	<url>${docHome}${docKey}</url>
+
+	<parent>
+		<groupId>ar.com.agea</groupId> 
+		<artifactId>agea-java-parent</artifactId> 
+		<version>3.0</version> 
+	</parent>
+
+
+	<properties>
+		<!-- ********************************* -->
+		<!-- Mantener ordenado alfabeticamente -->
+		<!-- ********************************* -->
+		
+		<!-- version number in html -->
+		<display_war_version>${project.version}</display_war_version>
+		<display_build_timestamp>${buildtimestamp}</display_build_timestamp>
+
+		<!-- SCM properties -->
+		<!-- <stashfolder>HUB/rol</stashfolder> 
+		<ciKey>HUB</ciKey> 
+		<docKey>HUB</docKey> 
+		<issueMngKey>SFHUB</issueMngKey> -->
+		
+
+		<!-- Plugin properties -->
+		<jdk.version>1.8</jdk.version>
+		<minify.version>1.6</minify.version>
+<!-- 		<wtp.version>2.0</wtp.version> -->
+		<maven.war.plugin.version>2.2</maven.war.plugin.version>
+
+		<!-- Dependencies properties -->
+		<httpcomponents.version>4.3.2</httpcomponents.version>
+		<junit.version>4.12</junit.version>
+		<jstl.version>1.2</jstl.version>
+		<jsp-api.version>2.2</jsp-api.version>
+		<jackson.core.version>2.9.8</jackson.core.version>
+		<log4j.version>1.2.17</log4j.version>
+		<spring.version>4.0.0.RELEASE</spring.version>
+		<!-- Comentado por version Auth0 -->
+		<!-- <servlet.version>2.5</servlet.version> --><!-- NO OLVIDAR - PEDIR ARTIFACTORY QUE SEA 3.0, ES LA QUE USA TOMCAT 7. -->
+		<servlet.version>3.1.0</servlet.version>
+		<sitemesh.version>2.4.2</sitemesh.version>
+		<urlrewritefilter.version>4.0.4</urlrewritefilter.version>
+		<auth0.version>1.0.4</auth0.version>
+
+		<project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
+	</properties>
+
+	<scm> 
+		<connection>scm:git:ssh://git@github.com:sickcrow/rol-scm.git</connection> 
+		<developerConnection>scm:git:ssh://git@github.com:sickcrow/rol-scm.git</developerConnection> 
+		<url>http://${stashrepo}/scm/${stashfolder}</url> 
+	  <tag>HEAD</tag>
+  </scm>
+
+	<dependencies>
+		<!-- ********************************* -->
+		<!-- Mantener ordenado alfabeticamente -->
+		<!-- ********************************* -->
+
+		<!-- Authentification. -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpcomponents.version}</version>
+		</dependency>
+
+		<!-- Junit framework. -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JSTL. -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+
+		<!-- JSP API. -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${jsp-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Jackson JSON Mapper. -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>${jackson.core.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson.core.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>${jackson.core.version}</version>
+		</dependency>
+
+		<!-- Log4j. -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- Spring Framework. -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Servlet Framework. -->
+		<dependency>
+		  	<groupId>javax.servlet</groupId>
+		  	<artifactId>javax.servlet-api</artifactId>
+		  	<version>${servlet.version}</version>
+		  	<scope>provided</scope>
+		</dependency>
+		<!-- comentado por version Auth0 -->
+		<!-- <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency> -->
+
+		<!-- Sitemesh Framework. -->
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>${sitemesh.version}</version>
+		</dependency>
+		
+		<!-- Urlrewritefilter. -->
+		<dependency>
+		    <groupId>org.tuckey</groupId>
+		    <artifactId>urlrewritefilter</artifactId>
+		    <version>${urlrewritefilter.version}</version>
+		</dependency>
+		
+		<!-- Auth0. -->
+		<dependency>
+		 	<groupId>com.auth0</groupId>
+		  	<artifactId>mvc-auth-commons</artifactId>
+		  	<version>${auth0.version}</version>
+		</dependency>
+				
+	</dependencies>
+	
+	
+	<build>
+		<finalName>rol</finalName>
+		<plugins>
+			<plugin>
+			    <artifactId>maven-release-plugin</artifactId>
+			    <configuration>
+			      <!--
+			        During release:perform, enable the "release" profile
+			       -->
+			      <releaseProfiles>release</releaseProfiles>
+				</configuration>
+			</plugin>
+			<plugin>
+		    	<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-war-plugin</artifactId>
+		        <version>${maven.war.plugin.version}</version>
+		        <configuration>
+		        	<nonFilteredFileExtensions>
+		            	<nonFilteredFileExtension>gif</nonFilteredFileExtension>
+		            	<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+		            	<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+		            	<nonFilteredFileExtension>png</nonFilteredFileExtension>
+		            	<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+		            	<nonFilteredFileExtension>swf</nonFilteredFileExtension>
+		          	</nonFilteredFileExtensions>
+		          	<webResources>
+		        		<resource>
+			         		<directory>src/main/webapp/</directory>
+			         		<excludes>
+				         		<exclude>**/*.js</exclude>
+				         		<exclude>**/*.css</exclude>
+			         		</excludes>
+			            	<filtering>true</filtering>
+			         	</resource>
+		         	</webResources>
+		    	</configuration>
+		    </plugin>			
+			
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<configuration>
+						<wtpversion>${wtp.version}</wtpversion>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<testResources>
+			<testResource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>*.xml</include>
+				</includes>
+			</testResource>
+		</testResources>
+	</build>
+	
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<finalName>rol</finalName>
+				<plugins>
+					<plugin>
+				    	<groupId>org.apache.maven.plugins</groupId>
+				        <artifactId>maven-war-plugin</artifactId>
+				        <version>${maven.war.plugin.version}</version>
+				        <configuration>
+				        	<nonFilteredFileExtensions>
+				            	<nonFilteredFileExtension>gif</nonFilteredFileExtension>
+				            	<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+				            	<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
+				            	<nonFilteredFileExtension>png</nonFilteredFileExtension>
+				            	<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+				            	<nonFilteredFileExtension>swf</nonFilteredFileExtension>
+				          	</nonFilteredFileExtensions>
+				          	<warSourceExcludes>**/css/**</warSourceExcludes>
+				          	<warSourceExcludes>**/js/**</warSourceExcludes>
+				    	</configuration>
+				    </plugin>			
+					
+					<plugin>
+						<groupId>net.alchim31.maven</groupId>
+						<artifactId>yuicompressor-maven-plugin</artifactId>
+						<version>1.3.0</version>
+						<executions>
+							<execution>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>compress</goal>
+								</goals>
+								<configuration>
+									<!--TODO porque este encoding? es asi o se tomo de una configuracion prearmada -->
+									<encoding>CP1252</encoding>
+								</configuration>
+							</execution>
+						</executions>
+						<configuration>
+							<disableOptimizations>true</disableOptimizations>
+							<nomunge>false</nomunge>
+							<jswarn>false</jswarn>
+							<preserveAllSemiColons>true</preserveAllSemiColons>
+							<nosuffix>true</nosuffix>
+						</configuration>
+					</plugin>
+				</plugins>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<artifactId>maven-eclipse-plugin</artifactId>
+							<configuration>
+								<wtpversion>${wtp.version}</wtpversion>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+	</profiles>
+	
+</project>

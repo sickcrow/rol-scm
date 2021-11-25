@@ -1,0 +1,11 @@
+{
+    "codigoProducto": "CLASIFICADOS CLARIN",
+    "codigoProductoComercial": "R15 VENTA - LINEAL",
+    "codigoNivelEstructura": "CLASIFICADOS_CLARIN.AUTOMOTORES.RUBRO_15.AUTOS_NACIONALES_E_IMPORTADOS",
+    "codigoTemplateDetallado": "131-Lineal auto simple",
+    "ordenamientos": [{
+         "codigo": "MARCA",
+         "valor": "FORD"
+    }],
+    "textoLibre": "Un aviso ROL"
+}

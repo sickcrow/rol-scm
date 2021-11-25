@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<!-- Busca componentes Controllers. -->
+	<context:component-scan base-package="ar.com.agea.hub.rol.controller" />
+
+	<!-- Permite la adaptacion de json/clases en los POST. -->
+	<context:annotation-config /> 
+
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+				<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+    			<bean class="org.springframework.http.converter.StringHttpMessageConverter" /> 
+			</list>
+		</property>
+	</bean>
+		 
+    <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+        <property name="classesToBeBound">
+            <list>
+                <value>ar.com.agea.hub.rol.model.dto.GWPNotificationDTO</value>               
+            </list>
+        </property>
+    </bean>
+
+	<!-- Resuelve vistas por nombre lógico de vista.  -->
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- Utiliza conversión para determinar para un URL request que instancia Controller le corresponde. -->
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+		<property name="caseSensitive" value="false" />
+	</bean>
+	
+	<bean id="customXMLUnmarshaller" class="ar.com.agea.hub.rol.utils.CustomXMLUnmarshaller">
+	</bean>
+</beans>

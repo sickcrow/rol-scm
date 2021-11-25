@@ -1,0 +1,15 @@
+{
+	"uid": 5233,
+	"apellido": "otro apellido",
+	"nombre": "otro nombre",
+	"genero": "F",
+	"fechaNacimiento": "1960-6-10",
+	"email": "usuario@gmail.com",
+	"codigoCliente": "ROL",
+	"codigoAnunciante": 231,
+	"codigoTipoDocumento": "96",
+	"numeroDocumento": 45000003,
+	"palabraClave": "usuario",
+	"contraseniaNueva": "usuarioq"
+	
+}

@@ -1,0 +1,73 @@
+/* Estilos IE9 */
+
+/* Botones */
+.genericBtn {
+	filter: none;background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ2YjBkYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMTgyYjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);}
+#div-bienes {position: relative}
+/* Checkbox */
+
+.custom-checkbox input, .custom-radio input {
+	position: absolute;
+	left: 2px;
+	top: 7px !important;
+	margin: 0;
+	z-index: 0;
+}
+
+.custom-checkbox #checkTerminosCondiciones {top: 5px !important;}
+
+.container, .step-content {position: relative;}
+
+.custom-checkbox label {background-position: 0 -2px;}
+.custom-checkbox label.hover, .custom-checkbox label.focus {background-position: 0 -29px;}
+.custom-checkbox label.checked {background-position: 0 -83px;}
+.custom-checkbox label.checkedHover,.custom-checkbox label.checkedFocus {background-position: 0 -56px;}
+.custom-radio label {background-position: -7px 0px;}
+.custom-radio label.hover,.custom-radio label.focus {background-position: -7px 0px;}
+.custom-radio label.checked {background-position: -7px -81px;}
+
+
+#popUpPagar #liTarjetas li .custom-radio input {left: -6px !important; top: 5px !important;}
+#popUpPagar #liTarjetas li .custom-radio label{line-height: 18px !important}
+
+
+/* Ventana Modal */
+.fuelux .fade.modal {top: -50%;}
+
+/* Mensaje */
+.popover button.close {
+	float: right; 
+	width: 20px; 
+	display: block; 
+	clear: both
+}
+.popover {line-height: 150%}
+.popover p {
+	float: left;
+	clear: left; 
+	margin: 10px 0 0 0; 
+	display: block; 
+	line-height: 100%;
+}
+/* Calendario */
+#paso3-Calendar table {background-color: #f8f8f8 !important; filter: Alpha(opacity=99) !important }
+#paso3-Calendar table td {background-color: #f8f8f8 !important; filter: Alpha(opacity=99) !important }
+#paso3-Calendar table td span {filter: Alpha(opacity=99) !important }
+
+/* Paso 4 */
+
+#paso4-CrearAviso #txtAreaTextoLibre {height: 95px;}
+#previewHolder img {min-width: 220px !important;}
+
+/* Mis Avisos */
+
+#nuevoAvisoBtn {
+	background: url(../img/sprite_clasificados.png) -4px -54px no-repeat transparent !important;
+	border: 0;
+	box-shadow: 0 0 0;
+	filter: none !important;	
+}
+
+/* Footer */
+
+.footerContentWrapper {background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxNiUiIHN0b3AtY29sb3I9IiM0YTRiNGIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1OCUiIHN0b3AtY29sb3I9IiM2NDY1NjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); filter: none}

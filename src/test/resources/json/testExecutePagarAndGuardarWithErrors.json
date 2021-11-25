@@ -1,0 +1,107 @@
+{
+    "uuidGenerarOrden": "rol-300000",
+    "presupuestada": false,
+    "tipoDocumento": {
+        "codigo": "96"
+    },
+    "codigoMedioDePago": "TARJETA",
+    "codigoTipoTarjeta": "VISA",
+    "tipoIVA": {
+        "codigo": "CONSUMIDOR_FINAL"
+    },
+    "conceptosVendibles": [{
+        "descripcion": "Automotores > Auto > Venta - Papel > Clasificados Clarin > Lineal > Autom�viles Nacionales e Importados, Autos de Colecci�n. > Automoviles Nacionales e Importados",
+        "fechaTarifa": 1373555461206,
+        "prefacturado": false,
+        "tipoMoneda": {
+            "codigo": "ARS"
+        },
+        "acciones": [{
+            "numero": "1",
+            "accion": "INICIAR_SIN_AUTORIZAR"
+        }],
+        "porcentajeIVA": 0,
+        "montoSinIVA": 229,
+        "montoIVA": 48.09,
+        "montoPercepcion": 0,
+        "montoTotal": 277.09,
+        "itemsConceptoVendible": [{
+            "numero": 0,
+            "itemsAviso": [{
+                "numero": 0,
+                "aviso": {
+                    "tipo": "LINEAL",
+                    "fechaPedidoPublicacion": 1373425200000,
+                    "incompleto": false,
+                    "bloqueado": false,
+                    "textoLibre": "FORD Fiesta 00 Un aviso ROL",
+                    "textoLibreTemplate": "Un aviso ROL",
+                    "tipoOperacion": {
+                        "codigo": "Venta"
+                    },
+                    "productoComercial": {
+                        "tipo": "PAPEL",
+                        "codigo": "R15 VENTA - LINEAL",
+                        "producto": {
+                            "tipo": "PAPEL",
+                            "codigo": "CLASIFICADOS CLARIN"
+                        }
+                    },
+                    "templateDetallado": {
+                        "codigo": "131-Lineal auto simple"
+                    },
+                    "codigoClase": "AUTO",
+                    "atributosAviso": [{
+                        "codigo": "canje",
+                        "valor": "false"
+                    },
+                    {
+                        "codigo": "tipoMoneda",
+                        "valor": "ARS"
+                    },
+                    {
+                        "codigo": "codigoEnriquecimiento",
+                        "valor": "2397073131634"
+                    }],
+                    "nivelEstructura": {
+                        "tipo": "PAPEL",
+                        "codigo": "CLASIFICADOS_CLARIN.AUTOMOTORES.RUBRO_15.AUTOS_NACIONALES_E_IMPORTADOS"
+                    },
+                    "preview": {
+                        "tipo": "IMAGEN",
+                        "contenido": "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"
+                    },
+                    "altoPuntosTipograficos": 6,
+                    "zonasComercializacion": [{
+                        "codigo": "CLASIFICADOS_CLARIN.PRODUCTO.CAPITAL_FEDERAL_+_GBA"
+                    }],
+                    "ordenamientos": [{
+                        "codigo": "MARCA",
+                        "codigoBusqueda": "FORD"
+                    },
+                    {
+                        "codigo": "MODELO",
+                        "codigoBusqueda": "Fiesta.FORD"
+                    },
+                    {
+                        "codigo": "A�O",
+                        "codigoBusqueda": "00"
+                    }],
+                    "lineasPublicadas": 4,
+                    "lineasFacturadas": 4,
+                    "textoJustificado": "<bf>ACURA„„<nm>Integra„„<bf>08…<nm>Prueba Prueba<QJ>\r\nPrueba Prueba Prueba Prueba<QJ>\r\nPrueba Prueba Prueba Prueba<QJ>\r\nPruebaê<QJ>\r\n"
+                }
+            }]
+        }]
+    }],
+    "capturador": {
+        "tipo": "ANUNCIANTE",
+        "codigoCliente": "ROL",
+        "codigoAnunciante": 300,
+        "codigoPASE": 5230
+    },
+    "usuarioExterno": {
+        "codigo": "5230",
+        "codigoSistema": "PASE"
+    }
+}

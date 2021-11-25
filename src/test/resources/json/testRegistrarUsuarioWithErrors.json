@@ -1,0 +1,16 @@
+{
+	"apellido":"Donalds",
+	"nombre":"Mc",
+	"genero":"M",
+	"email":"mc.combo",
+	"fechaNacimiento":"1980-10-10 00:00:00.000",
+	"codigoTipoDocumento":"96",
+	"numeroDocumento":"12345678",
+	"palabraClave":"Biggmacc",
+	"codigoCliente":"ROL",
+	"codigoTipoAnunciante":"PARTICULAR",
+	"codigoCanalEntrada":"ROL",
+	"codigoTipoIVA":"CONSUMIDOR_FINAL",
+	"codigoMedioPagoPrincipal":"TARJETA",
+	"codigoPerfilAnunciante":"Otro"
+}

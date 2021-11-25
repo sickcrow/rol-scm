@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+            http://www.springframework.org/schema/jdbc
+            http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/jms
+			http://www.springframework.org/schema/jms/spring-jms-3.0.xsd
+			http://cxf.apache.org/jaxws
+			http://cxf.apache.org/schemas/jaxws.xsd
+			http://www.springframework.org/schema/task
+			http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+	<!-- Busca componentes Services. -->
+	<context:component-scan base-package="ar.com.agea.hub.rol.service" />
+
+	<!-- Busca componentes Facades. -->
+	<context:component-scan base-package="ar.com.agea.hub.rol.facade" />
+
+	<!-- Busca componentes Comparators. -->
+	<context:component-scan base-package="ar.com.agea.hub.rol.comparator" />
+
+	<!-- Resuelve rutas relativas de servicios HUB por nombre. -->
+	<bean id="urlServiceResolver" class="ar.com.agea.hub.rol.utils.URLServiceResolver" init-method="init">
+		<constructor-arg name="urlsName">
+			<map key-type="ar.com.agea.hub.rol.utils.URLName">
+				<entry key="HUB" value="${rol.hubapi.url}" />
+				<!-- <entry key="HUB" value="http://testf.api-hub.agea.com.ar/hub-api/rest" /> -->
+				<entry key="GWP" value="${rol.gwp.url}" />
+			</map>
+		</constructor-arg>
+		<constructor-arg name="urls">
+			<map key-type="ar.com.agea.hub.rol.utils.URLServiceName">
+			
+				<!-- Servicios de HUB. -->
+				<!-- Servicios de Aviso. -->
+				<entry key="HUB_EXECUTE_NOTIFICAR_PAGO" value="/ordenPublicacion/executeNotificarPago" />
+				<entry key="HUB_GET_CONFIGURACIONES_ORDENAMIENTO_PANTALLA" value="/ordenPublicacion/getConfiguracionesOrdenamientoPantalla" />
+				<entry key="HUB_GET_ITEMS_ORDENAMIENTO_AVISO" value="/ordenPublicacion/getItemsOrdenamientoAviso" />
+				<entry key="HUB_GET_ITEMS_ORDENAMIENTO_AVISO_GROUP" value="/ordenPublicacion/getItemsOrdenamientoAvisoGroup" />
+				<entry key="HUB_GET_ORDENES_PUBLICACION_BY_CAPTURADOR" value="/ordenPublicacion/getOrdenesPublicacionByCapturador" />
+				<entry key="HUB_UPDATE_ESTADO_AVISO" value="/ordenPublicacion/updateEstadoAviso" />
+				<entry key="HUB_UPDATE_ORDEN_PUBLICACION" value="/ordenPublicacion/updateOrdenPublicacion" />
+				<entry key="HUB_SAVE_ORDEN_PUBLICACION" value="/ordenPublicacion/saveOrdenPublicacion" />
+				<entry key="HUB_GET_TEMPLATE_PRECARGA" value="/ordenPublicacion/getTemplatePrecargaByCodigo"/>
+				<entry key="HUB_VALIDATE_PROMOCIONES" value="/ordenPublicacion/validatePromociones" />
+				<entry key="HUB_GET_ORDEN_PUBLICACION_BY_ID" value="/ordenPublicacion/getOrdenPublicacionById" />
+				
+				<!-- Servicios de Common. -->
+				<entry key="HUB_GET_CARACTERES_INVALIDOS_JUSTIFICACION" value="/common/getCaracteresInvalidosJustificacion" />
+				<entry key="HUB_GET_PROPIEDADES_DEFAULT" value="/common/getPropiedadesDefault" />
+				<entry key="HUB_GET_PAISES" value="/common/getPaises" />
+				<entry key="HUB_GET_PROVINCIAS" value="/common/getProvincias" />
+				<entry key="HUB_GET_LOCALIDADES" value="/common/getLocalidades" />
+				
+				<!-- Servicios de Facturación. -->
+				<entry key="HUB_VALIDATE_ORDEN_FACTURADA_EN_SAP" value="/facturacion/validateOrdenFacturadaEnSAP" />
+				
+				<!-- Servicios de Interfaz Dinamica. -->
+				<entry key="HUB_GET_BIENES" value="/interfazdinamica/getBienes" />
+				<entry key="HUB_GET_FAMILIAS" value="/interfazdinamica/getFamilias" />
+				<entry key="HUB_GET_FAMILIAS_BY_FILTER" value="/interfazdinamica/getFamiliasByFilter" />
+				<entry key="HUB_GET_FAMILIA_BY_CLASE_AVISO" value="/interfazdinamica/getFamiliaByClaseAviso" />
+				<entry key="HUB_GET_CLASE_BY_CODIGO" value="/interfazdinamica/getClaseByCodigo" />
+				<entry key="HUB_GET_PERMISO_ATRIBUTO_BY_FILTER" value="/interfazdinamica/getPermisoAtributoByFilter" />
+								
+				<!-- Servicios de Pretasador. -->
+				<entry key="HUB_EXECUTE_TASAR" value="/pretasador/executeTasar" />
+				
+				<!-- Servicios de Producto. -->
+				<entry key="HUB_GET_CALENDARIO" value="/producto/getCalendario" />
+				<entry key="HUB_EXECUTE_JUSTIFICAR" value="/producto/executeJustificar" />
+				<entry key="HUB_GET_NIVELES_ESTRUCTURA" value="/producto/getNivelesEstructura" />
+				<entry key="HUB_GET_PRODUCTO_COMERCIAL" value="/producto/getProductoComercial" />
+				<entry key="HUB_GET_PRODUCTO_COMERCIAL_DEFAULT" value="/producto/getProductoComercialDefault" />
+				<entry key="HUB_GET_PRODUCTOS" value="/producto/getProductos" />
+				<entry key="HUB_GET_TIPOS_OPERACION" value="/producto/getTiposOperacion" />
+				<entry key="HUB_GET_ZONAS_COMERCIALIZACION" value="/producto/getZonasComercializacion" />
+				<entry key="HUB_VALIDATE_PALABRAS_PROHIBIDAS" value="/producto/validatePalabrasProhibidas" />
+				<entry key="HUB_GET_TEMPLATES_DETALLADO" value="/producto/getTemplatesDetallado" />
+				<entry key="HUB_GET_IMAGENES" value="/producto/getImagenes" />
+				<entry key="HUB_GET_CONFIGURACIONES_PROMOCION_PANTALLA" value="/producto/getConfiguracionesPromocionPantalla" />
+				<entry key="HUB_VALIDATE_VIGENCIA" value="/producto/validateVigenciaRepublicacion" />
+				
+				
+				<!-- Servicios de Usuario Cliente. -->
+				<entry key="HUB_SAVE_CAPTURADOR" value="/cliente/saveCapturador" />
+				<entry key="HUB_UPDATE_CAPTURADOR" value="/cliente/updateCapturador" />
+				<entry key="HUB_GET_CAPTURADOR" value="/cliente/getCapturador" />
+				<entry key="HUB_UPDATE_SEXO_FECHA_CAPTURADOR" value="/cliente/updateSexoFechaCapturador" />
+				<entry key="HUB_GET_TARJETAS_PAGO" value="/cliente/getTarjetasPago" />
+				
+				<!-- Servicios de GWP. -->
+				<entry key="GWP_REALIZAR" value="/transaccion/realizar" />
+
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<!-- Resuelve rutas relativas de las cabeceras http HUB por nombre. -->
+	<bean id="httpHeadersResolver" class="ar.com.agea.hub.rol.utils.HttpHeadersResolver" init-method="init">
+		<constructor-arg name="urlsName">
+			<map key-type="ar.com.agea.hub.rol.utils.URLName">
+				<entry key="HUB" value-ref="hubHttpHeaders" />
+				<entry key="GWP" value-ref="gwpHttpHeaders" />
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="hubHttpHeaders" class="org.springframework.http.HttpHeaders">
+		<property name="contentType" value="application/json" />
+	</bean>
+		
+	<bean id="gwpHttpHeaders" class="org.springframework.http.HttpHeaders">
+		<property name="contentType" value="application/x-www-form-urlencoded;charset=UTF-8" />
+	</bean>
+	
+	<!-- Configura autenticación y pooling para conexiones a servicios HUB. -->
+	<bean id="connectionManager" class="org.apache.http.impl.conn.PoolingClientConnectionManager">
+		<property name="maxTotal" value="${rol.hubapi.connectionManager.maxTotal}" />
+	</bean>
+
+	<bean id="authScope" class="org.apache.http.auth.AuthScope">
+		<constructor-arg name="host"><null /></constructor-arg>
+		<constructor-arg name="port" value="${rol.hubapi.authScope.port}" />
+		<constructor-arg name="realm"><null /></constructor-arg>
+		<constructor-arg name="scheme"><null /></constructor-arg>
+	</bean>
+	
+	<bean id="hubCredentials" class="org.apache.http.auth.UsernamePasswordCredentials">
+		<constructor-arg name="userName" value="${rol.hubapi.credentials.userName}" />
+		<constructor-arg name="password" value="${rol.hubapi.credentials.password}" />
+	</bean>
+
+	<bean id="gwpCredentials" class="ar.com.agea.hub.rol.credentials.GWPCredentials">
+		<constructor-arg name="codigoAplicacionCliente" value="${rol.gwp.credentials.codigoAplicacionCliente}" />
+		<constructor-arg name="llaveAplicacionCliente" value="${rol.gwp.credentials.llaveAplicacionCliente}" />
+	</bean>
+	
+	<bean id="auth0Credentials" class="ar.com.agea.hub.rol.credentials.Auth0Credentials">
+		<constructor-arg name="domain" value="${rol.authentication.auth0.domain}" />
+		<constructor-arg name="clientId" value="${rol.authentication.auth0.clientId}" />
+		<constructor-arg name="clientSecret" value="${rol.authentication.auth0.clientSecret}" />
+		<constructor-arg name="callbackLogin" value="${rol.authentication.auth0.callback.login}" />
+		<constructor-arg name="callbackLogout" value="${rol.authentication.auth0.callback.logout}" />
+		<constructor-arg name="webProtocol" value="${rol.authentication.auth0.web.protocol}" />
+	</bean>
+	
+	<bean id="credentialsProvider" class="org.apache.http.impl.client.BasicCredentialsProvider" />
+
+	<bean id="methodInvoke" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject" ref="credentialsProvider" />
+		<property name="targetMethod" value="setCredentials" />
+		<property name="arguments">
+			<list>
+				<ref bean="authScope" />
+				<ref bean="hubCredentials" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="httpClient" class="org.apache.http.impl.client.DefaultHttpClient">
+		<constructor-arg name="conman" ref="connectionManager" />
+		<property name="credentialsProvider" ref="credentialsProvider" />
+	</bean>
+	
+	<bean id="requestFactory" class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
+		<constructor-arg name="httpClient" ref="httpClient" />
+	</bean>
+	
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<constructor-arg name="requestFactory" ref="requestFactory" />
+	</bean>
+	
+	<bean id="facade" class="ar.com.agea.hub.rol.facade.impl.DefaultFacade">
+		<constructor-arg name="urlServiceResolver" ref="urlServiceResolver" />
+		<constructor-arg name="httpHeadersResolver" ref="httpHeadersResolver" />
+		<constructor-arg name="restTemplate" ref="restTemplate" />
+	</bean>
+	
+	<bean id="auth0LoginHelper" class="ar.com.agea.hub.rol.utils.Auth0LoginHelper"></bean>
+	
+</beans>
